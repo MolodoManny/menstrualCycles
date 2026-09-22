@@ -25,7 +25,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 255, unique = true)
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Column(name = "password_hash", nullable = false, length = 255)
@@ -62,7 +62,7 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
-    private List<Notification> notifications = new ArrayList<>();
+    private List<UserNotification> notifications = new ArrayList<>();
 
 
     @PrePersist

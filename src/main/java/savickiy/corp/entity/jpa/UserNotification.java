@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Notification {
+public class UserNotification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,7 +36,7 @@ public class Notification {
     @Column(name = "sent_at")
     private LocalDateTime sentAt;
 
-    @Enumerated(EnumType.STRING)
+
     @Column(name = "message")
     private String message;
 }

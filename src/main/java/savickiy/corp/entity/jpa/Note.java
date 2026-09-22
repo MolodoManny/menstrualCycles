@@ -2,6 +2,7 @@ package savickiy.corp.entity.jpa;
 
 import jakarta.persistence.*;
 import lombok.*;
+import savickiy.corp.entity.enums.Mood;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -30,17 +31,17 @@ public class Note {
     @Column(name = "date", nullable = false)
     private LocalDate date;
 
-    @Enumerated(EnumType.STRING)
+
     @Column(name = "title")
     private String title;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "content")
+
+    @Column(columnDefinition = "TEXT")
     private String content;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "mood")
-    private String mood;
+    private Mood mood;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;

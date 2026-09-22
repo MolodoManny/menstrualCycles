@@ -38,7 +38,7 @@ public class Discharge {
     @Column(length = 20)
     private DischargeColor color;
 
-    @Column(name = "notes", length = 255)
+    @Column(name = "notes")
     private String notes;
 
 
